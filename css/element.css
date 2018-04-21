@@ -1,0 +1,59 @@
+#pictureDiv{
+    position: absolute;
+    left: 5px;
+    top: 30px;
+    width: 230px;
+    height: 210px;
+    border: solid black;
+}
+
+#name{
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    left: 245px;
+    height: 60px;
+    border: solid black;
+}
+
+#ueberschrift{
+    position: absolute;
+    left: 5px;
+    top: -10px;
+}
+
+#ueberschrift_eigenschaften{
+    position: absolute;
+    top: -15px;
+    left: 5px;
+}
+
+#eigenschaften{
+    position: absolute;
+    border: solid black;
+    left: 245px;
+    right: 5px;
+    top: 100px;
+    height: 140px;
+}
+
+#liste{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+#textDiv{
+    border: solid black;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 250px;
+}
+
+p{
+    position: relative;
+    font-family: sans-serif;
+    left: 10px;
+    width: 98%;
+}

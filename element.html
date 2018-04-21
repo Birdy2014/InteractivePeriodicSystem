@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title id="title"></title>
+    <link rel="icon" href="img/Logo.gif">
+    <link rel="stylesheet" href="css/element.css">
+    <link href="css/system.css" rel="stylesheet" type="text/css">
+    <script src="js/element.js"></script>
+    <script src="js/elementDatenbank.js"></script>
+    <noscript><h1 style="color: red;" align="center">Bitte aktivieren sie JavaScript!</h1></noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--<nav>
+    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/index.html'">Periodensystem</button>
+    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/quiz.html?currentQuestionId=0'">Quiz</button>
+    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/impressum.html'">Impressum</button>
+    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/links.html'">Links</button>
+</nav>-->
+<div class="text-center">
+    <div class="btn-group">
+        <a class="btn btn-outline-primary" href="index.html">Periodensystem</a>
+        <a class="btn btn-outline-primary" href="quiz.html?currentQuestionId=0">Quiz</a>
+        <a class="btn btn-outline-primary" href="impressum.html">Impressum</a>
+        <a class="btn btn-outline-primary" href="links.html">Links</a>
+    </div>
+</div>
+
+<div id="pictureDiv"><img id="picture" src="" alt="Can't find image" width="230px"></div>
+<div id="name"><h1 id="ueberschrift"></h1></div>
+<div id="eigenschaften">
+    <h2 id="ueberschrift_eigenschaften">Eigenschaften</h2>
+    <ul id="liste">
+        <li id="Ordungszahl"></li>
+        <li id="Masse"></li>
+        <li id="Elektronegativität"></li>
+        <li id="ElektronenKonfiguration"></li>
+        <li id="Schmelzpunkt-Siedepunkt"></li>
+    </ul>
+</div>
+<div id="textDiv">
+    <p id="text"></p>
+    <br>
+    <p>Textquelle: <a href="" id="source"></a></p>
+</div>
+</body>
+<script>load();</script>
+</html>
