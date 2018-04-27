@@ -1,10 +1,10 @@
-﻿
-createSpecialSquare(1, 5, 5, 5); //First Element
-createSpecialSquare(2, 5, 90, 5); // Second One
+﻿var yAxisOffset = 2;
 
+createSpecialSquare(1, 5, 5, 5 + yAxisOffset); //First Element
+createSpecialSquare(2, 5, 90, 5 + yAxisOffset); // Second One
 
 var ID = 3;
-var heightE = 15;
+var heightE = 15 + yAxisOffset;
 var arr = [5, 10, 65, 70, 75, 80, 85, 90];
 for(var i = 0; i < 2; i++){
     for(var x1 = 0; x1 < 8; x1++){
@@ -15,7 +15,7 @@ for(var i = 0; i < 2; i++){
 }
 
 ID = 19;
-heightE = 35;
+heightE = 35 + yAxisOffset;
 for(var y = 0; y < 2; y++) {
     var x = 5;
     for (i = 0; i < 18; i++) {
@@ -38,7 +38,7 @@ for(i = 0; i < 15;i++){
     ID++;
     x += 5;
 }
-heightE = 55;
+heightE = 55 + yAxisOffset;
 x = 20;
 for(i = 0; i < 15; i++){
     createSpecialSquare(ID, 5, x, heightE); // 6th Period end
@@ -59,15 +59,15 @@ for(i = 0; i < 15;i++){
     ID++;
     x += 5;
 }
-heightE = 65;
+heightE = 65 + yAxisOffset;
 x = 20;
 for(i = 0; i < 15; i++){
     createSpecialSquare(ID, 5, x, heightE); // 7th Period end
     ID++;
     x += 5;
 }
-heightE = 77;
-createBox(5, 77, document.getElementById("e1").style.height.toString(), 10, "gray", "la");
+heightE = 77 + yAxisOffset;
+createBox(5, heightE, document.getElementById("e1").style.height.toString(), 10, "gray", "la");
 createBox(5, heightE + 10, document.getElementById("e1").style.height.toString(), 10, "gray", "ac");
 var la = document.getElementById("la");
 var ac = document.getElementById("ac");
@@ -86,8 +86,8 @@ ac.appendChild(img2);
 la.style.background = "none";
 ac.style.background = "none";
 
-createSpecialSquare("1001", 5, 15, 55); // Empty Ones
-createSpecialSquare("2001", 5, 15, 65);
+createSpecialSquare("1001", 5, 15, 55 + yAxisOffset); // Empty Ones
+createSpecialSquare("2001", 5, 15, 65 + yAxisOffset);
 document.getElementById("e1001").style.background = "none";
 document.getElementById("e2001").style.background = "none";
 
