@@ -153,7 +153,10 @@ function addImg(id){
 	var img = document.createElement("img");
     img.src = "img/" + id + ".gif";
     //img.alt = "Here would be: " + id;
-    img.alt = elements[id.substring(1, id.length) - 1][0];
+    if(id != "e1001" && id != "e2001")
+        img.alt = elements[id.substring(1, id.length) - 1][0];
+    else
+        img.alt = "Here would be: " + id;
     img.style.position = "relative";
     img.style.height = "100%";
     img.style.width = "100%";
