@@ -10,7 +10,7 @@
     position: absolute;
     top: 70px;
     right: 5px;
-    left: 245px;
+    left: 265px;
     height: 60px;
 }
 
@@ -22,13 +22,13 @@
 
 #ueberschrift_eigenschaften{
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: 5px;
 }
 
 #eigenschaften{
     position: absolute;
-    left: 245px;
+    left: 265px;
     right: 5px;
     top: 130px;
     height: 140px;
