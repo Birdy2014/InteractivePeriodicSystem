@@ -16,25 +16,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 <body>
-<!--<nav>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/index.html'">Periodensystem</button>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/quiz.html?currentQuestionId=0'">Quiz</button>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/impressum.html'">Impressum</button>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/links.html'">Links</button>
-</nav>-->
-<div class="text-center">
-    <div class="btn-group">
-        <a class="btn btn-outline-primary" href="https://birdy2014.github.io/">Home</a>
-        <a class="btn btn-outline-primary" href="index.html">Periodensystem</a>
-        <a class="btn btn-outline-primary" href="quiz.html?currentQuestionId=0">Quiz</a>
-        <a class="btn btn-outline-primary" href="https://birdy2014.github.io/impressum.html">Impressum</a>
-    </div>
-</div>
 
-<div id="pictureDiv"><img id="picture" src="" alt="Can't find image" width="230px"></div>
-<div id="name"><h1 id="ueberschrift"></h1></div>
-<div id="eigenschaften">
-    <h2 id="ueberschrift_eigenschaften">Eigenschaften</h2>
+<nav class="navbar navbar-expand-sm bg-success navbar-light fixed-top">
+    <a class="navbar-brand" href="index.html">Periodensystem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://birdy2014.github.io">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="quiz.html">Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../impressum.html">Impressum</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="pictureDiv" class="container"><img id="picture" src="" alt="Can't find image" width="230px"></div>
+<div id="name" class="container"><h1 id="ueberschrift"></h1></div>
+<div id="eigenschaften" class="container">
+    <h3 id="ueberschrift_eigenschaften">Eigenschaften</h3>
     <ul id="liste">
         <li id="Ordungszahl"></li>
         <li id="Masse"></li>
@@ -43,7 +48,7 @@
         <li id="Schmelzpunkt-Siedepunkt"></li>
     </ul>
 </div>
-<div id="textDiv">
+<div id="textDiv" class="container-fluid">
     <p id="text"></p>
     <br>
     <p>Textquelle: <a href="" id="source"></a></p>

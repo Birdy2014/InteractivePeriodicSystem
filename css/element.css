@@ -1,19 +1,17 @@
 #pictureDiv{
     position: absolute;
     left: 5px;
-    top: 30px;
+    top: 70px;
     width: 230px;
     height: 210px;
-    border: solid black;
 }
 
 #name{
     position: absolute;
-    top: 30px;
+    top: 70px;
     right: 5px;
     left: 245px;
     height: 60px;
-    border: solid black;
 }
 
 #ueberschrift{
@@ -24,16 +22,15 @@
 
 #ueberschrift_eigenschaften{
     position: absolute;
-    top: -15px;
+    top: -20px;
     left: 5px;
 }
 
 #eigenschaften{
     position: absolute;
-    border: solid black;
     left: 245px;
     right: 5px;
-    top: 100px;
+    top: 130px;
     height: 140px;
 }
 
@@ -44,11 +41,10 @@
 }
 
 #textDiv{
-    border: solid black;
     position: absolute;
-    left: 5px;
+    left: 0px;
     right: 5px;
-    top: 250px;
+    top: 280px;
 }
 
 p{
