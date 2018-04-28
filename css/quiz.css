@@ -1,0 +1,34 @@
+:root {
+    --offset-top: 60px;
+    --offset-left: 10px;
+}
+
+#ueberschrift {
+    position: relative;
+    top: var(--offset-top);
+    left: var(--offset-left);
+}
+
+#frage {
+    position: relative;
+    top: var(--offset-top);
+    left: var(--offset-left);
+}
+
+#antworten {
+    position: relative;
+    top: var(--offset-top);
+    left: var(--offset-left);
+}
+
+#submit {
+    position: relative;
+    top: var(--offset-top);
+    left: var(--offset-left);
+}
+
+#text {
+    position: relative;
+    top: var(--offset-top);
+    left: var(--offset-left);
+}

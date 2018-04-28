@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Quiz</title>
     <script src="js/quiz.js"></script>
-    <link href="css/system.css" rel="stylesheet" type="text/css">
     <link href="img/Logo.gif" rel="icon">
+    <link rel="stylesheet" href="css/quiz.css">
     <noscript><h1 style="color: red;" align="center">Bitte aktivieren sie JavaScript!</h1></noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -14,37 +14,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 <body>
-<!--<nav>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/index.html'">Periodensystem</button>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/quiz.html?currentQuestionId=0'">Quiz</button>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/impressum.html'">Impressum</button>
-    <button onclick="window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/links.html'">Links</button>
-</nav>-->
-<div class="text-center">
-    <div class="btn-group">
-        <a class="btn btn-outline-primary" href="https://birdy2014.github.io/">Home</a>
-        <a class="btn btn-outline-primary" href="index.html">Periodensystem</a>
-        <a class="btn btn-primary" href="quiz.html?currentQuestionId=0">Quiz</a>
-        <a class="btn btn-outline-primary" href="https://birdy2014.github.io/impressum.html">Impressum</a>
+<nav class="navbar navbar-expand-sm bg-success navbar-light fixed-top">
+    <a class="navbar-brand" href="index.html">Periodensystem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://birdy2014.github.io">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="quiz.html">Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../impressum.html">Impressum</a>
+            </li>
+        </ul>
     </div>
+</nav>
+<h1 id="ueberschrift">Frage 1</h1>
+<p id="frage">Frage</p>
+<div class="jumbotron" id="antworten">
+    <input type="radio" id="answer1" name="answer" value="Antwort1">
+    <label for="answer1" id="labelAnswer1">Antwort 1</label> <br>
+    <input type="radio" id="answer2" name="answer" value="Antwort2">
+    <label for="answer2" id="labelAnswer2">Antwort 2</label> <br>
+    <input type="radio" id="answer3" name="answer" value="Antwort3">
+    <label for="answer3" id="labelAnswer3">Antwort 3</label> <br>
+    <input type="radio" id="answer4" name="answer" value="Antwort4">
+    <label for="answer4" id="labelAnswer4">Antwort 4</label>
 </div>
-
-    <h1 id="ueberschrift">Frage 1</h1>
-    <p id="frage">Frage</p>
-    <div class="jumbotron">
-        <input type="radio" id="answer1" name="answer" value="Antwort1">
-        <label for="answer1" id="labelAnswer1">Antwort 1</label>
-        <br>
-        <input type="radio" id="answer2" name="answer" value="Antwort2">
-        <label for="answer2" id="labelAnswer2">Antwort 2</label>
-        <br>
-        <input type="radio" id="answer3" name="answer" value="Antwort3">
-        <label for="answer3" id="labelAnswer3">Antwort 3</label>
-        <br>
-        <input type="radio" id="answer4" name="answer" value="Antwort4">
-        <label for="answer4" id="labelAnswer4">Antwort 4</label>
-    </div>
-    <input type="button" class="btn btn-success" onclick="submit()" value="Submit">
-    <script>load();</script>
+<input type="button" class="btn btn-success" onclick="submit()" value="Submit" id="submit">
+<script>load();</script>
 </body>
 </html>
