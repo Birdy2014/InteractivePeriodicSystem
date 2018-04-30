@@ -27,19 +27,19 @@ function createInfo(ordnungszahl, size) {
     }
 
     let info = $("<div></div>");
-    info.attr("style", "width: " + 8 * size + "px; height: " + 2 * size + "px; position: absolute; left: " + 3 * size + "px; top: " + 0.5 * size + "px; border: 2px solid black;");
+    info.attr("style", "width: " + 8 * size + "px; height: " + 2 * size + "px; position: absolute; left: " + 3 * size + "px; top: " + 0.5 * size + "px; border: 2px solid black; overflow: hidden;");
     info.attr("id", "information");
 
     let picture = $("<img></img>");
     picture.attr("src", "img/e" + ordnungszahl + ".gif");
     picture.attr("style", "width: " + (2 * size - 4) + "px; height: " + (2 * size - 4) + "px;");
 
-    let heading = $("<h4></h4>").html(elements[ordnungszahl - 1][0]).attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.1 * size + "px;");
+    let heading = $("<b></b>").html(elements[ordnungszahl - 1][0]).attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.1 * size + "px; font-size: " + size / 3 + "px;");
 
     let list = $("<ul></ul>").attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.5 * size + "px;");
-    list.append($("<li></li>").html("Kernladungszahl: " + ordnungszahl));
-    list.append($("<li></li>").html("Relative Atommasse: " + elements[ordnungszahl - 1][1][0]));
-    list.append($("<li></li>").html("Elektronegativität: " + elements[ordnungszahl - 1][1][1]));
+    list.append($("<li></li>").html("Kernladungszahl: " + ordnungszahl).attr("style", "font-size: " + size / 3 + "px;"));
+    list.append($("<li></li>").html("Relative Atommasse: " + elements[ordnungszahl - 1][1][0]).attr("style", "font-size: " + size / 3 + "px;"));
+    list.append($("<li></li>").html("Elektronegativität: " + elements[ordnungszahl - 1][1][1]).attr("style", "font-size: " + size / 3 + "px;"));
 
     info.append(picture).append(heading).append(list);
     $("#periodicSystemContainer").append(info);
@@ -52,14 +52,14 @@ function createLegende(size) {
     }
 
     let legende = $("<div></div>");
-    legende.attr("style", "width: " + 8 * size + "px; height: " + 2 * size + "px; position: absolute; left: " + 3 * size + "px; top: " + 0.5 * size + "px; border: 2px solid black;");
+    legende.attr("style", "width: " + 8 * size + "px; height: " + 2 * size + "px; position: absolute; left: " + 3 * size + "px; top: " + 0.5 * size + "px; border: 2px solid black; overflow: hidden;");
     legende.attr("id", "information");
 
     let example = $("<img></img>");
     example.attr("src", "img/example.gif");
     example.attr("style", "width: " + (2 * size - 4) + "px; height: " + (2 * size - 4) + "px;");
 
-    let text = $("<h4></h4>").html("Schraffur: radioaktiv").attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.1 * size + "px;");
+    let text = $("<b></b>").html("Schraffur: radioaktiv").attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.1 * size + "px; font-size: " + size / 3 + "px;");
 
     legende.append(example).append(text);
     $("#periodicSystemContainer").append(legende);
@@ -123,7 +123,10 @@ function drawPeriodicSystem() {
 
     let size = height / 9.2;
 
-    $("#periodicSystemContainer").attr("style", "position: absolute; top: 60px; height: " + height + "px; left: " + ((window.innerWidth - 18 * size) / 2) + "px");
+    let left = ((window.innerWidth - 18 * size) / 2);
+    if (left < 0) left = 0;
+
+    $("#periodicSystemContainer").attr("style", "position: absolute; top: 60px; height: " + height + "px; left: " + left + "px");
 
     for (let i = 1; i <= elements.length; i++) {
         createElement(i, size);
