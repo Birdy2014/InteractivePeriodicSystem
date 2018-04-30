@@ -1,348 +1,143 @@
-﻿var yAxisOffset = 2;
+function createElement(ordnungszahl, size) {
+    var element = $("<a></a>");
+    element.attr("href", "element.html?currentElementId=" + ordnungszahl);
+    let elementLeft = getPositionOfElement(ordnungszahl)[0] * size;
+    let elementTop = getPositionOfElement(ordnungszahl)[1] * size;
+    element.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + elementLeft + "px; top: " + elementTop + "px;");
+    element.mouseover(function () {
+        createInfo(ordnungszahl, size);
+    });
+    element.mouseleave(function () {
+        createLegende(size);
+    });
 
-createSpecialSquare(1, 5, 5, 5 + yAxisOffset); //First Element
-createSpecialSquare(2, 5, 90, 5 + yAxisOffset); // Second One
+    var elementImg = $("<img></img>");
+    elementImg.attr("src", "img/e" + ordnungszahl + ".gif");
+    elementImg.attr("style", "height: inherit; width: inherit;");
+    elementImg.attr("alt", elements[ordnungszahl - 1][0]);
 
-var ID = 3;
-var heightE = 15 + yAxisOffset;
-var arr = [5, 10, 65, 70, 75, 80, 85, 90];
-for(var i = 0; i < 2; i++){
-    for(var x1 = 0; x1 < 8; x1++){
-        createSpecialSquare(ID, 5, arr[x1], heightE); // 2nd and 3rd Period
-        ID++;
+    element.append(elementImg);
+    $("#periodicSystemContainer").append(element);
+}
+
+function createInfo(ordnungszahl, size) {
+    if ($("#information").length != 0) {
+        $("#information").empty();
+        $("#information").remove();
     }
-    heightE += 10;
+
+    let info = $("<div></div>");
+    info.attr("style", "width: " + 8 * size + "px; height: " + 2 * size + "px; position: absolute; left: " + 3 * size + "px; top: " + 0.5 * size + "px; border: 2px solid black;");
+    info.attr("id", "information");
+
+    let picture = $("<img></img>");
+    picture.attr("src", "img/e" + ordnungszahl + ".gif");
+    picture.attr("style", "width: " + (2 * size - 4) + "px; height: " + (2 * size - 4) + "px;");
+
+    let heading = $("<h4></h4>").html(elements[ordnungszahl - 1][0]).attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.1 * size + "px;");
+
+    let list = $("<ul></ul>").attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.5 * size + "px;");
+    list.append($("<li></li>").html("Kernladungszahl: " + ordnungszahl));
+    list.append($("<li></li>").html("Relative Atommasse: " + elements[ordnungszahl - 1][1][0]));
+    list.append($("<li></li>").html("Elektronegativität: " + elements[ordnungszahl - 1][1][1]));
+
+    info.append(picture).append(heading).append(list);
+    $("#periodicSystemContainer").append(info);
 }
 
-ID = 19;
-heightE = 35 + yAxisOffset;
-for(var y = 0; y < 2; y++) {
-    var x = 5;
-    for (i = 0; i < 18; i++) {
-        createSpecialSquare(ID, 5, x, heightE);  // 4th 5th ones
-        ID++;
-        x += 5;
+function createLegende(size) {
+    if ($("#information").length != 0) {
+        $("#information").empty();
+        $("#information").remove();
     }
-    heightE += 10;
-}
-x = 5;
-for(i = 0; i < 2; i++){
-    createSpecialSquare(ID, 5, x, heightE);  //Cs and Ba
-    ID++;
-    x += 5;
-}
-heightE += 22;
-x = 15;
-for(i = 0; i < 15;i++){
-    createSpecialSquare(ID, 5, x, heightE);  //Lanthanoids
-    ID++;
-    x += 5;
-}
-heightE = 55 + yAxisOffset;
-x = 20;
-for(i = 0; i < 15; i++){
-    createSpecialSquare(ID, 5, x, heightE); // 6th Period end
-    ID++;
-    x += 5;
-}
-x = 5;
-heightE += 10;
-for(i = 0; i < 2; i++){
-    createSpecialSquare(ID, 5, x, heightE); // Fr and Ra
-    ID++;
-    x += 5;
-}
-heightE += 22;
-x = 15;
-for(i = 0; i < 15;i++){
-    createSpecialSquare(ID, 5, x, heightE); //Actinoids
-    ID++;
-    x += 5;
-}
-heightE = 65 + yAxisOffset;
-x = 20;
-for(i = 0; i < 15; i++){
-    createSpecialSquare(ID, 5, x, heightE); // 7th Period end
-    ID++;
-    x += 5;
-}
-heightE = 77 + yAxisOffset;
-createBox(5, heightE, document.getElementById("e1").style.height.toString(), 10, "gray", "la");
-createBox(5, heightE + 10, document.getElementById("e1").style.height.toString(), 10, "gray", "ac");
-var la = document.getElementById("la");
-var ac = document.getElementById("ac");
-var img = document.createElement("img");
-img.src = "img/la.gif";
-img.alt = "la.gif";
-img.style.height = "100%";
-img.style.width = "100%";
-la.appendChild(img);
-var img2 = document.createElement("img");
-img2.src = "img/ac.gif";
-img2.alt = "ac.gif";
-img2.style.height = "100%";
-img2.style.width = "100%";
-ac.appendChild(img2);
-la.style.background = "none";
-ac.style.background = "none";
 
-createSpecialSquare("1001", 5, 15, 55 + yAxisOffset); // Empty Ones
-createSpecialSquare("2001", 5, 15, 65 + yAxisOffset);
-document.getElementById("e1001").style.background = "none";
-document.getElementById("e2001").style.background = "none";
+    let legende = $("<div></div>");
+    legende.attr("style", "width: " + 8 * size + "px; height: " + 2 * size + "px; position: absolute; left: " + 3 * size + "px; top: " + 0.5 * size + "px; border: 2px solid black;");
+    legende.attr("id", "information");
 
+    let example = $("<img></img>");
+    example.attr("src", "img/example.gif");
+    example.attr("style", "width: " + (2 * size - 4) + "px; height: " + (2 * size - 4) + "px;");
 
+    let text = $("<h4></h4>").html("Schraffur: radioaktiv").attr("style", "position: absolute; left: " + 2.1 * size + "px; top: " + 0.1 * size + "px;");
 
-for(i = 1; i < 119; i++){
-        mouseStuff("e" + i);
-}
-
-for(var inc = 1; inc < 119; inc++){
-	addImg("e" + inc);
-}
-
-addImg("e1001");
-addImg("e2001");
-
-
-var el = document.getElementById("e1001");
-el.onmouseover = function () {document.getElementById("la").style.background = "orange"; el.style.background = "orange"};
-el.onmouseout = function () {document.getElementById("la").style.background = "none"; el.style.background = "none"};
-
-document.getElementById("la").onmouseover = function () {el.style.background = "orange"; document.getElementById("la").style.background = "orange"};
-document.getElementById("la").onmouseout = function () {el.style.background = "none"; document.getElementById("la").style.background = "none"};
-
-var el2 = document.getElementById("e2001");
-el2.onmouseover = function () {document.getElementById("ac").style.background = "orange"; el2.style.background = "orange"};
-el2.onmouseout = function () {document.getElementById("ac").style.background = "none"; el2.style.background = "none"};
-
-document.getElementById("ac").onmouseover = function () {el2.style.background = "orange"; document.getElementById("ac").style.background = "orange"};
-document.getElementById("ac").onmouseout = function () {el2.style.background = "none"; document.getElementById("ac").style.background = "none"};
-
-createE();
-
-function mouseStuff(id) {
-    var element = document.getElementById(id);
-    element.onmouseover = function () {addW(element.id)};
-    element.onmouseout = function () {killW()};
-    element.onclick = function () {window.location.href = "element.html?currentElementId=" + id.substring(1)};
-}
- function doCube(id){
-     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-     var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-     var x = document.getElementById(id);
-     var d = x.style.width.toString().substring(0, x.style.width.toString().length - 1);
-     x.style.height = (width / 100 * d).toString() + "px";
-
- }
-
-function createSpecialSquare(end, percent, left, top){
-    var c = document.createElement("span");
-    c.style.width = percent + "%";
-    c.style.position = "absolute";
-    c.style.background = end % 2 === 0 ? "red" : "blue";
-    c.id = "e" + end;
-    c.style.left = left + "%";
-    c.style.top = top + "%";
-    c.style.cursor = "pointer";
-    document.body.appendChild(c);
-    doCube("e" + end);
-}
-function addImg(id){
-	var xy = document.getElementById(id);
-	var img = document.createElement("img");
-    img.src = "img/" + id + ".gif";
-    //img.alt = "Here would be: " + id;
-    if(id != "e1001" && id != "e2001")
-        img.alt = elements[id.substring(1, id.length) - 1][0];
-    else
-        img.alt = "Here would be: " + id;
-    img.style.position = "relative";
-    img.style.height = "100%";
-    img.style.width = "100%";
-    xy.appendChild(img);
-}
-function addW(id) {
-    killE();
-    var div = document.createElement("div");
-    div.style.position = "absolute";
-    div.style.height = "20%";
-    div.style.width = "40%";
-    div.style.left = "20%";
-    div.style.top = "10%";
-    div.style.background = "white";
-    div.id = "sWindow";
-    div.style.border = "solid grey";
-    document.body.appendChild(div);
-    var img = document.createElement("img");
-    img.src = "img/" + id + ".gif";
-    img.alt = "Here would be " + id;
-    img.position = "absolute";
-    img.style.height = "100%";
-    div.appendChild(img);
-    var parentHeight = img.parentNode.style.height.toString();
-    parentHeight = parentHeight.substring(0, parentHeight.length - 1);
-    var bodyheight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    img.style.width = (bodyheight / 100) * parentHeight + "px";
-
-    var name = document.createElement("li");
-    var list = document.createElement("ul");
-    var mass = document.createElement("li");
-    var protons = document.createElement("li");
-    var empty = document.createElement("br");
-    var electronegativitiy = document.createElement("li");
-    var pos = document.createElement("li");
-    protons.innerHTML = "Kernladungszahl: " + id.substring(1);
-    mass.innerHTML = "Relative Atommasse: " + elements[id.substring(1) - 1][1][0] + " u";
-    electronegativitiy.innerHTML = "Elektronegativität: " + elements[id.substring(1) - 1][1][1];
-    pos.innerHTML = "Position: " + solveGroup(getGroup(id)) + ", " + getPeriod(id) + ". Periode";
-    list.appendChild(name);
-    list.appendChild(empty);
-    list.appendChild(protons);
-    list.appendChild(mass);
-    list.appendChild(electronegativitiy);
-    list.appendChild(pos);
-    list.style.position = "absolute";
-    list.style.left = img.style.width;
-    list.style.top = "-4%";
-    name.style.listStyle = "none";
-    name.style.fontSize = "200%";
-    name.innerHTML = elements[id.substring(1) - 1][0];
-    div.appendChild(list);
-}
-function killW() {
-    var toKill = document.getElementById("sWindow");
-    toKill.parentNode.removeChild(toKill);
-    createE();
-}
-function createE(){
-    var div = document.createElement("div");
-    div.style.position = "absolute";
-    div.style.height = "20%";
-    div.style.width = "40%";
-    div.style.left = "20%";
-    div.style.top = "10%";
-    div.style.background = "white";
-    div.id = "example";
-    div.style.border = "solid grey";
-    document.body.appendChild(div);
-    var img = document.createElement("img");
-    img.src = "img/example.gif";
-    img.alt = "Not there";
-    img.position = "absolute";
-    img.style.height = "100%";
-    div.appendChild(img);
-    var parentHeight = img.parentNode.style.height.toString();
-    parentHeight = parentHeight.substring(0, parentHeight.length - 1);
-    var bodyheight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    img.style.width = (bodyheight / 100) * parentHeight + "px";
-
-    var title = document.createElement("li");
-    var list = document.createElement("ul");
-    var text = document.createElement("li");
-    var text1 = document.createElement("li");
-    var empty = document.createElement("br");
-    var empty1 = document.createElement("br");
-    list.appendChild(title);
-    list.appendChild(empty);
-    list.appendChild(text);
-    list.appendChild(empty1);
-    list.appendChild(text1);
-    list.style.position = "absolute";
-    list.style.left = img.style.width;
-    list.style.top = "0%";
-    title.style.listStyle = "none";
-    title.style.fontSize = "200%";
-    text.style.fontSize = "100%";
-    text1.style.fontSize = "100%";
-    title.style.textDecoration = "underline";
-    title.innerHTML = "Schraffur";
-    text.innerHTML = "Vorhanden: Radioaktiv";
-    text1.innerHTML = "Fehlt: Nicht Radioaktiv";
-    /*list.style.listStyleImage = "url(../img/LogoSmall.png)";
-    list.style.listStylePosition = "inside";*/
-    list.style.borderRight = "2px solid grey";
-    list.style.paddingRight = "4%";
-    list.style.paddingTop = "1%";
-    list.style.height = "97%";
-    list.style.margin = "0%";
-    div.appendChild(list);
+    legende.append(example).append(text);
+    $("#periodicSystemContainer").append(legende);
 
 }
-function killE() {
-    var toKill = document.getElementById("example");
-    toKill.parentNode.removeChild(toKill);
+
+function createAcLa(size) {
+    let ac1 = $("<img></img>");
+    ac1.attr("src", "img/e1001.gif");
+    ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px;");
+
+    let la1 = $("<img></img>");
+    la1.attr("src", "img/e2001.gif");
+    la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px;");
+
+    let ac2 = $("<img></img>");
+    ac2.attr("src", "img/ac.gif");
+    ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px;");
+
+    let la2 = $("<img></img>");
+    la2.attr("src", "img/la.gif");
+    la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px;");
+
+    ac1.mouseover(function () {
+        ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: orange;");
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: orange;");
+    }).mouseleave(function () {
+        ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: none;");
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: none;");
+    });
+
+    la1.mouseover(function () {
+        la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: orange;");
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: orange;");
+    }).mouseleave(function () {
+        la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: none;");
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: none;");
+    });
+
+    ac2.mouseover(function () {
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: orange;");
+        ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: orange;");
+    }).mouseleave(function () {
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: none;");
+        ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: none;");
+    });
+
+    la2.mouseover(function () {
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: orange;");
+        la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: orange;");
+    }).mouseleave(function () {
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: none;");
+        la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: none;");
+    });
+
+    $("#periodicSystemContainer").append(ac1).append(la1).append(ac2).append(la2);
 }
 
-function createBox(left, top, height, width, background, id){
-    var element = document.createElement("span");
-    element.style.position = "absolute";
-    element.style.height = height;
-    element.style.width = width + "%";
-    element.style.left = left + "%";
-    element.style.top = top + "%";
-    element.style.background = background;
-    element.id = id;
-    document.body.appendChild(element);
-}
-function getGroup(id) {
-    var p = id.substring(1);
-    var g1 = [1, 3, 11, 19, 37, 55, 87];
-    var g2 = [4, 12, 20, 38, 56, 88];
-    var g3 = [5, 13, 31, 49, 81, 113];
-    var g4 = [6, 14, 32, 50, 82, 114];
-    var g5 = [7, 15, 33, 51, 83, 115];
-    var g6 = [8, 16, 34, 52, 84, 116];
-    var g7 = [9, 17, 35, 53, 85, 117];
-    var g8 = [2, 10, 18, 36, 54, 86, 118];
+function drawPeriodicSystem() {
+    let height = window.innerHeight - 60;
 
-    var n1 = [29, 47, 79, 111];
-    var n2 = [30, 48, 80, 112];
-    var n3 = [21, 39];
-    var n4 = [22, 40, 72, 104];
-    var n5 = [23, 41, 73, 105];
-    var n6 = [24, 42, 74, 106];
-    var n7 = [25, 43, 75, 107];
-    var n8 = [26, 44, 76, 108, 27, 45, 77, 109, 28, 46, 78, 110];
+    let size = height / 9.2;
 
-    var array = [g1, g2, g3, g4, g5, g6, g7, g8];
+    $("#periodicSystemContainer").attr("style", "position: absolute; top: 60px; height: " + height + "px; left: " + ((window.innerWidth - 18 * size) / 2) + "px");
 
-   for(var i = 0; i < array.length; i++){
-       if(contains(p, array[i])){
-           return "h" + (i + 1);
-       }
-   }
-   array = [n1, n2, n3, n4, n5, n6, n7, n8];
-
-    for(i = 0; i < array.length; i++){
-        if(contains(p, array[i])){
-            return "n" + (i + 1);
-        }
+    for (let i = 1; i <= elements.length; i++) {
+        createElement(i, size);
     }
-    if(p > 56 && p < 72)return "n3";
-    if(p > 88 && p < 104)return"n3";
+    createAcLa(size);
+    createLegende(size);
 }
 
-function getPeriod(id) {
-    var num = parseInt(id.substring(1));
-    if (num < 3) return 1;
-    else if (num < 11) return 2;
-    else if (num < 19) return 3;
-    else if (num < 37) return 4;
-    else if (num < 55) return 5;
-    else if (num < 87) return 6;
-    else return 7;
-}
+function getPositionOfElement(ordnungszahl) {
+    let elementsPos = [ //elementPos[0] = X position in anzahl elementQuadrate, elementPos[1] = Y position, index = Ordnungszahl
+        [0, 0, 17, 0, 1, 12, 13, 14, 15, 16, 17, 0, 1, 12, 13, 14, 15, 16, 17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+        [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+    ];
 
-
-function contains(x, arr){
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] == x)return true;
-    }
-    return false;
-}
-function solveGroup(string){
-    var type = string.toString().substring(0, 1);
-    var num = string.toString().substring(1);
-    return num + ". " + (type === "n" ? "Nebengruppe" : "Hauptgruppe");
+    let out = [elementsPos[0][ordnungszahl], elementsPos[1][ordnungszahl]];
+    return out;
 }
