@@ -8,10 +8,10 @@ var questions = [
     ["Welches ist das am seltensten natürlich auf der Erde vorkommende Element?", "Gold", "Platin", "Astat", "Xenon", 3],
     ["Die Lanthanoide stehen in Periode:", "5", "8", "6", "7", 3],
     ["Die Hauptgruppennummer gibt an, ", "wie viele Neutronen im Kern vorhanden sind", "wie viele Elektronen in der Valenzschale vorhanden sind", "zu welchem anderen Element ein Element zerfällt", "wie die Protonen im Kern geordnet sind", 2],
-    ["Ein Uran-Atom des Isotops U-135 hat die Atommasse von 135u. Wie heißt ein Element, dessen Atome nur etwa ein fünftel eines Uran-Atoms wiegen?", "Sauerstoff", "Aluminium", "Palladium", "Wasserstoff", 2],
+    ["Ein Uran-Atom des Isotops U-135 hat die Atommasse von 135u. Wie heißt ein Element, dessen Atome nur etwa ein Fünftel eines Uran-Atoms wiegen?", "Sauerstoff", "Aluminium", "Palladium", "Wasserstoff", 2],
     ["Ein Helium-Atom des Isotops He-4 besitzt", "2 Elektronen, 2 Protonen und 2 Neutronen", "2 Elektronen, 2 Protonen und 1 Neutron", "4 Elektronen, 4 Protonen und 4 Neutronen", "2 Elektronen und 2 Neutronen", 1],
     ["Fluor steht in", "der 4. Periode der 7. Nebengruppe", "der 2. Periode der 7. Hauptgruppe", "der 6.Periode der 8. Hauptgruppe", "der 6. Periode der 7. Nebengruppe", 2],
-    ["Was ist eine Redoxraktion?", "Ein Synonym für eine exotherme Reaktion", "Eine Reaktion, bei der ein Gas direkt in einen Feststoff übergeht", "eine Säure-Base-Reaktion", "Eine Reaktion, bei der eine Oxidation und eine Reduktion stattfindet", 4],
+    ["Was ist eine Redoxreaktion?", "Ein Synonym für eine exotherme Reaktion", "Eine Reaktion, bei der ein Gas direkt in einen Feststoff übergeht", "eine Säure-Base-Reaktion", "Eine Reaktion, bei der eine Oxidation und eine Reduktion stattfindet", 4],
     ["Welche Aussage trifft zu ?  140g Kaliumiodid werden in 100 ml Wasser gegeben.", "Die Lösung erwärmt sich auf 97°C.", "Das Salz dissoziert in K- und I+.", "Die Lösung kühlt auf bis zu -12°C ab", "Durch die Reaktion der Kalium-Ionen mit dem Wasser entsteht hochexplosives Kaliumoxid", 3],
     ["Welche Aussage zu Oxidation trifft zu ?", "Eine Oxidation ist immer eine Reaktion mit Sauerstoff.", "Eine Oxidation ist die Abgabe von Elektronen.", "Eine Oxidation ist die Aufnahme von Elektronen.", "Eine Oxidation ist die Trennung eines Metalls von Sauerstoff.", 2]
 ];
