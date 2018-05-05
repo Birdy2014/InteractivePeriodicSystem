@@ -69,11 +69,11 @@ function createLegende(size) {
 function createAcLa(size) {
     let ac1 = $("<img></img>");
     ac1.attr("src", "img/e1001.gif");
-    ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px;");
+    ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 5 * size + "px;");
 
     let la1 = $("<img></img>");
     la1.attr("src", "img/e2001.gif");
-    la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px;");
+    la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 6 * size + "px;");
 
     let ac2 = $("<img></img>");
     ac2.attr("src", "img/ac.gif");
@@ -85,33 +85,33 @@ function createAcLa(size) {
 
     ac1.mouseover(function () {
         ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: orange;");
-        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: orange;");
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 5 * size + "px; background: orange;");
     }).mouseleave(function () {
         ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: none;");
-        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: none;");
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 5 * size + "px; background: none;");
     });
 
     la1.mouseover(function () {
         la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: orange;");
-        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: orange;");
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 6 * size + "px; background: orange;");
     }).mouseleave(function () {
         la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: none;");
-        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: none;");
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 6 * size + "px; background: none;");
     });
 
     ac2.mouseover(function () {
-        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: orange;");
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 5 * size + "px; background: orange;");
         ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: orange;");
     }).mouseleave(function () {
-        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 5 * size + "px; background: none;");
+        ac1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 5 * size + "px; background: none;");
         ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px; background: none;");
     });
 
     la2.mouseover(function () {
-        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: orange;");
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 6 * size + "px; background: orange;");
         la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: orange;");
     }).mouseleave(function () {
-        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " +  2 * size + "px; top: " + 6 * size + "px; background: none;");
+        la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 6 * size + "px; background: none;");
         la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px; background: none;");
     });
 
