@@ -76,11 +76,11 @@ function createAcLa(size) {
     la1.attr("style", "width: " + size + "px; height: " + size + "px; position: absolute; left: " + 2 * size + "px; top: " + 6 * size + "px;");
 
     let ac2 = $("<img></img>");
-    ac2.attr("src", "img/ac.gif");
+    ac2.attr("src", "img/la.gif");
     ac2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 7.1 * size + "px;");
 
     let la2 = $("<img></img>");
-    la2.attr("src", "img/la.gif");
+    la2.attr("src", "img/ac.gif");
     la2.attr("style", "width: " + 2 * size + "px; height: " + size + "px; position: absolute; left: 0px; top: " + 8.1 * size + "px;");
 
     ac1.mouseover(function () {
